@@ -2,8 +2,8 @@
 
 Category: Home Lab
 Date: 15/02/2026
-Status:
-Time Invested:
+Status: Finish
+Time Invested: 1.5 Hours
 
 ## Quick Facts
 
