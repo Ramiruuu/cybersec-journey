@@ -10,7 +10,6 @@ This folder contains the documentation for my offensive security home lab—an i
 
 ```javascript
 home-lab/
-        kali-linux/
         virtual-machines/                  
                         kali-linux/
                         target-machines/
@@ -36,4 +35,5 @@ All VMs operate on an isolated host-only network—completely segmented from my 
 - Lessons learned from each practice session
 
 ## This lab is my playground for learning how systems break—so I can better understand how to defend them.
+
 
