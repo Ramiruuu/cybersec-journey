@@ -31,9 +31,11 @@ Since i dont know whats the Ip address of the Vulnerable VM, i did a full scan i
 
 After that i notice the Ip address 102.168.1.3/24 has a lot of open ports, and i think this is the VM's ip address.
 
-![Aggresive scan](image-3.png)
+Since this is a test lab, I won’t be concerned about stealth. Instead, I will try to get the most information out of the scans.
 
-I run an Aggressive scan against that network and I see an open port 21, After digging some information i see that port 21 in vsftpd version has an available exploit in metasploit.
+Let’s start by port scanning the target with nmap. I did a full port, aggresive scan against the target. Here are the results.
+
+![Aggresive scan](image-3.png)
 
 ### What is VSFTPD v2.3.4 Backdoor Command Execution
 
@@ -49,5 +51,14 @@ Let's leverage it to get a shell:
 
 Annnnddd we sucessfully owned this machine now!!!
 
-## I will continue to exploit another ports in the future
+## Port 23 Telnet
 
+For this one I used auxiliary module to know the credentials of this specific port
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+So now we know the credentials for the msfadmin account, and if you log in and play around you will find out that this accound has sudo privilege, so it’s possible to run commands as root.
+
+## I will continue to exploit another ports in the future
