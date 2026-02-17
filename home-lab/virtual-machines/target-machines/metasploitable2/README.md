@@ -29,7 +29,7 @@ Since i dont know whats the Ip address of the Vulnerable VM, i did a full scan i
 
 ![Reconn](image-1.png)
 
-After that i notice the Ip address 102.168.1.3/24 has a lot of open ports, and i think this is the VM's ip address.
+After that i notice the Ip address 192.168.1.3/24 has a lot of open ports, and i think this is the VM's ip address.
 
 Since this is a test lab, I won’t be concerned about stealth. Instead, I will try to get the most information out of the scans.
 
@@ -62,3 +62,4 @@ For this one I used auxiliary module to know the credentials of this specific po
 So now we know the credentials for the msfadmin account, and if you log in and play around you will find out that this accound has sudo privilege, so it’s possible to run commands as root.
 
 ## I will continue to exploit another ports in the future
+
