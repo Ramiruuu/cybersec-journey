@@ -1,5 +1,3 @@
-# Kali-Linux Setup
-
 Category: Metasploitable2
 Date: 17/02/2026
 Status: Finish
@@ -52,3 +50,4 @@ Let's leverage it to get a shell:
 Annnnddd we sucessfully owned this machine now!!!
 
 ## I will continue to exploit another ports in the future
+
