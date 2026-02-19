@@ -1,39 +1,42 @@
-# Home Lab Environment
+# Part 1: 📁 01-Basic-Network-Setup (Beginner)
 
-## Core Components : Kali Linux | Ubuntu | Metasploitable2
+## Current Situation
 
-### 📌 Overview
+The company has two departments (Sales and IT) sharing the same network 192.168.1.0/24, causing congestion and performance issues
 
-This folder contains the documentation for my offensive security home lab—an isolated environment designed for hands-on penetration testing practice, vulnerability exploitation, and security tool experimentation.
+![topology](image.png)
 
-### 🗂️ Folder Structure
+### Requirements
+
+- Configure hostnames on all devices
+- Set up console passwords (cisco)
+- Configure enable passwords (class)
+- Ensure all PCs can ping each other (currently all in same subnet) 
+
+## Walkthrough
+
+So first thing that I would do is to assign ip addresses to each pc in each departments
+
+![PC-1]](image-1.png)
+
+![PC-2]](image-2.png)
+
+![PC-3](image-3.png)
+
+![PC-4](image-4.png)
+
+After that, go to SW1 and SW2 and I used this following commands to set the hostname, passwords and ensuring that each pc can communicate to each other
 
 ```javascript
-home-lab/
-        virtual-machines/                  
-                        kali-linux/
-                        target-machines/
-                        ubuntu-machine/
+enable              # Enters privileged EXEC mode, which is required to view or change the running configuration.
+config t            # Short for configure terminal, this command enters global configuration mode to start making changes to the device.
+hostname SW1/SW2    # Changes the device's prompt name to SW1/SW2. (Note: In a real network, a hostname cannot contain a slash /).
+enable secret class # Sets the encrypted password required to enter privileged EXEC mode to class.
+line console 0      # Enters the configuration mode for the console port (the physical management port).
+password cisco      # Sets the password required to access the console line to cisco.
+login               # Enables password checking at the console login prompt, forcing users to enter the password set above.
+interface vlan 1    #  Enters configuration mode for the Virtual Interface VLAN 1. This is the logical management interface used to assign an IP address to the switch so it can be managed over the network.
+ip address 192.168.1.1 255.255.255.0     # Assigns the IP address 192.168.1.1 and subnet mask 255.255.255.0 to the management interface (VLAN 1).
+no shutdown              # Administratively enables the interface (turns it on). By default, VLAN interfaces are often in a "shutdown" (disabled) state.
+copy run start            # Saves the current configuration (running-config) to the startup configuration file (startup-config). This ensures the changes will persist if the switch is reloaded or powered off.
 ```
-
-### 🎯 Purpose
-
-- Practice real-world penetration testing techniques
-- Experiment with security tools in a safe, isolated environment
-- Understand attacker methodologies to improve defensive skills
-- Build a foundation for certifications (OSCP, CEH, etc.)
-
-### 🔐 Network
-
-All VMs operate on an isolated host-only network—completely segmented from my physical network and the internet (except for updates).
-
-### 📚 What You'll find here
-
-- Setup guides and configurations
-- Tool installation and usage notes
-- Attack methodologies and techniques
-- Lessons learned from each practice session
-
-## This lab is my playground for learning how systems break—so I can better understand how to defend them.
-
-
