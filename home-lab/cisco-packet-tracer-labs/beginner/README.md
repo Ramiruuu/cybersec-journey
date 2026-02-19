@@ -1,29 +1,53 @@
-# Part 1: 📁 01-Basic-Network-Setup (Beginner)
+# Part 1: Basic-Network-Setup (Beginner)
+
+- Category : Home Lab
+- Status : Finish
+- Time Invested : 2 Hours
+
+## Goal
+
+My goal is to eliminate network congestion between the IT and HR departments by separating them into two different VLANs, allowing each department to have its own dedicated network for better performance and security.
+
+## Why I did this?
+
+I did this project to learn and explore networking fundamentals that will help me on my journey to becoming a cybersecurity professional. Understanding how to segment networks with VLANs teaches me how to isolate traffic and control access—skills that are essential for protecting systems from attacks.
+
+## So lets start!!! 
+
+## Topology 
+
+![topology](./assets/image.png)
 
 ## Current Situation
 
-The company has two departments (Sales and IT) sharing the same network 192.168.1.0/24, causing congestion and performance issues
+The company has two departments (IT and HR) sharing the same network 192.168.1.0/24, causing congestion and performance issues.
 
-![topology](./assets/image.png)
+## Task
+
+Configure a BEST solution as possible to this kind of problem
 
 ### Requirements
 
 - Configure hostnames on all devices
 - Set up console passwords (cisco)
 - Configure enable passwords (class)
-- Ensure all PCs can ping each other (currently all in same subnet) 
+- Configure Sub-Interfaces in R1
+- Configure vlans for IT and HR
+- Set the ports to trunking mode and access mode
+- Save the configuration to NVRAM
+- Ensure all PCs can ping each other (currently all each subnets)
 
 ## Walkthrough
 
 So first thing that I would do is to assign ip addresses to each pc in each departments
 
-![PC-1](./assets/image-1.png)
+![PC-1](./assets/pc1-config.png)
 
-![PC-2](./assets/image-2.png)
+![PC-2](./assets/pc2-config.png)
 
-![PC-3](./assets/image-3.png)
+![PC-3](./assets/pc3-config.png)
 
-![PC-4](./assets/image-4.png)    
+![PC-4](./assets/pc4-config.png)    
 
 After that, go to SW1 and SW2 and I used this following commands to set the hostname, passwords and ensuring that each pc can communicate to each other
 
@@ -148,4 +172,12 @@ PC - 1 Command Prompt
 ![alt text](./assets/pingresult2.png)
 
 PC - 3 Command Prompt
+
+### Conclusion
+
+The VLAN implementation successfully segregates the IT and HR departments into their own broadcast domains, effectively resolving the network congestion issues caused by the shared 192.168.1.0/24 network. With VLAN 10 (192.168.10.0/24) dedicated to IT and VLAN 20 (192.168.20.0/24) dedicated to HR, each department now enjoys improved performance, reduced broadcast traffic, and enhanced security through logical separation. The router-on-a-stick configuration on R1 ensures proper inter-VLAN routing only when necessary, while maintaining isolation between departments. This solution provides a scalable foundation for future network growth and can be easily expanded to accommodate additional departments or devices. The network is now optimized for both current operations and future business needs.
+
+- Document prepared by: Ramiruuu
+- Date: February 19, 2026
+
 
