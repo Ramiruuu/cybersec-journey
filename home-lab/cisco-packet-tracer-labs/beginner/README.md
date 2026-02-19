@@ -17,13 +17,15 @@ The company has two departments (Sales and IT) sharing the same network 192.168.
 
 So first thing that I would do is to assign ip addresses to each pc in each departments
 
+![PC-1](./assets/image-1.png)
 
+![PC-2](./assets/image-2.png)
 
 ![PC-3](./assets/image-3.png)
 
 ![PC-4](./assets/image-4.png)
 
-After that, go to SW1 and SW2 and I used this following commands to set the hostname, passwords and ensuring that each pc can communicate to each other
+After that, the next step i do is to go to SW1 and SW2 and I used this following commands to set the hostname, passwords and ensuring that each pc can communicate to each other
 
 ```javascript
 enable              # Enters privileged EXEC mode, which is required to view or change the running configuration.
@@ -38,4 +40,5 @@ ip address 192.168.1.1 255.255.255.0     # Assigns the IP address 192.168.1.1 an
 no shutdown              # Administratively enables the interface (turns it on). By default, VLAN interfaces are often in a "shutdown" (disabled) state.
 copy run start            # Saves the current configuration (running-config) to the startup configuration file (startup-config). This ensures the changes will persist if the switch is reloaded or powered off.
 ```
+
 
