@@ -71,12 +71,12 @@ I completed this cybersecurity-focused networking lab to understand how basic ne
 
 ## Key Takeaways
 
-1. Basic switch features are powerful security tools—port security alone can stop most physical intrusion attempts.
+1. Basic switch features are powerful security tools—port security alone can stop most physical intrusion attempts
 2. DHCP snooping taught me that attackers don't need sophisticated methods; a $20 router plugged into the wall can take down an entire network.
-3. Disabling unused ports is free security—every open port is a potential door for an attacker."
+3. Disabling unused ports is free security—every open port is a potential door for an attacker
 4. Encrypted management (SSH) is non-negotiable; Telnet sends passwords in plain text that anyone on the network can capture.
 5. Logging isn't just for troubleshooting—it's your intrusion detection system telling you when someone tries to breach your defenses.
-6. Defense in depth means if one layer fails (like ACLs), another layer (like port security) still protects you."
+6. Defense in depth means if one layer fails (like ACLs), another layer (like port security) still protects you
 7. Most real-world breaches exploit basic weaknesses—this lab showed me how to close those gaps with configurations I already have
 
 ## Conclusion
