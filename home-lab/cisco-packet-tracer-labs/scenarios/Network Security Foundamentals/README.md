@@ -35,7 +35,7 @@ The owner is furious and demands you secure the network immediately to prevent:
 
 Configure switch ports to only allow 1 MAC address. If someone unplugs a PC and plugs in a laptop, the port shuts down
 
-![alt text](./assets/portsecurity.png
+![alt text](./assets/portsecurity.png)
 
 ## Step 2
 
